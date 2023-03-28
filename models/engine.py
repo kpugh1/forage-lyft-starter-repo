@@ -9,7 +9,7 @@ class Engine(Servicable):
         return self.needs_service()
 
 class CapuletEngine(Engine):
-    def __init__(self, last_service_date, current_mileage, last_service_mileage):
+    def __init__(self, current_mileage, last_service_mileage):
         super().__init__()
         self.current_mileage = current_mileage
         self.last_service_mileage = last_service_mileage
