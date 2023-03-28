@@ -1,6 +1,5 @@
 from models.engine import CapuletEngine, SternmanEngine, WilloughbyEngine
 
-
 class EngineFactory:
     def create_capulet(current_mileage, last_service_mileage):
         return CapuletEngine(current_mileage, last_service_mileage)

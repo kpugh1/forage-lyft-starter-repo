@@ -14,6 +14,7 @@ class CapuletEngine(Engine):
         self.current_mileage = current_mileage
         self.last_service_mileage = last_service_mileage
 
+    #Needs service when more than 30,000 miles from last service
     def needs_service(self):
         return self.current_mileage - self.last_service_mileage > 30000
 
@@ -22,6 +23,7 @@ class SternmanEngine(Engine):
         super().__init__()
         self.warning_light_is_on = warning_light_is_on
 
+    #Needs service when service light is on
     def needs_service(self):
         if self.warning_light_is_on:
             return True
@@ -34,6 +36,7 @@ class WilloughbyEngine(Engine):
         self.current_mileage = current_mileage
         self.last_service_mileage = last_service_mileage
 
+    #Needs service when more than 60,000 miles from last service
     def needs_service(self):
         return self.current_mileage - self.last_service_mileage > 60000
 

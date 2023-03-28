@@ -10,20 +10,17 @@ class TestBattery(unittest.TestCase):
         battery = BatteryFactory.create_nubbin(last_service_date)
         self.assertTrue(battery.needs_service())
 
-    def test_nubbin_battery_not_serviced(self):
-        last_service_date = datetime.today()
-        battery = BatteryFactory.create_nubbin(last_service_date)
-        self.assertFalse(battery.needs_service())
-
     def test_splinder_battery_is_serviced(self):
         last_service_date = datetime.today().replace(year=2018)
         battery = BatteryFactory.create_nubbin(last_service_date)
         self.assertTrue(battery.needs_service())
 
-    def test_splinder_battery_not_serviced(self):
+    def test_nubbin_battery_not_serviced(self):
         last_service_date = datetime.today()
         battery = BatteryFactory.create_nubbin(last_service_date)
         self.assertFalse(battery.needs_service())
 
-if __name__ == '__main__':
-    unittest.main()
+    def test_splinder_battery_not_serviced(self):
+        last_service_date = datetime.today()
+        battery = BatteryFactory.create_nubbin(last_service_date)
+        self.assertFalse(battery.needs_service())
